@@ -1,4 +1,4 @@
-package calculadorafinal;
+﻿package calculadorafinal;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.ArrayList;
