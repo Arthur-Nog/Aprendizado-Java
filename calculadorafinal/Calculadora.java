@@ -7,19 +7,19 @@ import java.util.ArrayList;
 public class Calculadora {
     Scanner ler = new Scanner(System.in);
     ArrayList<Double> valores = new ArrayList<>();
-    int acao;
+    String acao;
 
 
-    String p1 = "sim";
+    String p1 ="s";
     double valor;
 
     public ArrayList<Double> pedir_valores(){
-        while (Objects.equals(p1, "sim")){
+        while (Objects.equals(p1, "s")){
             System.out.println("Digite um valor: \n");
             valor = ler.nextDouble();
             valores.add(valor);
             ler.nextLine();
-            System.out.println("Digite 'sim' se quiser continuar!");
+            System.out.println("Digite s se quiser continuar!");
             p1 = ler.next();
             ler.nextLine();
         }
@@ -27,28 +27,28 @@ public class Calculadora {
     }
 
     public void iniciar(){
-            System.out.println("\nDigite uma ação que você deseja fazer na calculadora!!\n 1 - Adição \n 2 - Subtração \n 3 - Multiplicação \n 4 - Divisão \n 5 - Encerrar Operação\n");
-            acao = ler.nextInt();
+            System.out.println("\nDigite uma ação que você deseja fazer na calculadora!!\n +  Adição \n -  Subtração \n *  Multiplicação \n /  Divisão \n !  Encerrar Operação\n");
+            acao = ler.next();
+
             ArrayList<Double> vals = pedir_valores();
             switch (acao) {
-                case 1:
-                    System.out.println(adicao(vals));
+                case "+":
+                    System.out.println("O resultado da operação é: " + adicao(vals));
                     break;
 
-                case 2:
+                case "-":
                     vals = pedir_valores();
-                    System.out.println(sub(vals));
+                    System.out.println("O resultado da operação é: " + sub(vals));
                     break;
 
-                case 3:
+                case "*":
                     vals = pedir_valores();
-                    System.out.println(mul(vals));
+                    System.out.println("O resultado da operação é: " + mul(vals));
                     break;
 
-
-                case 4:
+                case "/":
                     vals = pedir_valores();
-                    System.out.println(div(vals));
+                    System.out.println("O resultado da operação é: " + div(vals));
                     break;
 
                 default:
